@@ -6,8 +6,9 @@ This web application will allow users to add, delete, update and view players. I
 ## How to run the app
 * Clone the repository: git clone https://github.com/Nhlosokuhle/playerTracker.git
 * Navigate to the project directory: cd playerTracker
-* Build the Docker image: docker build -t playerTracker .
-* Run the Docker container: docker run -p 8000:8000 playerTracker
+* MAKE SURE THAT DOCKER DESKTOP IS OPENED
+* Build the Docker image: docker build -t playertracker .
+* Run the Docker container: docker run -p 8000:8000 playertracker
 
 ## Usage
 After following the installation instructions, you should be able to access the Django project by navigating to http://localhost:8000 in your web browser. From there, you can create the account and access the menu.
