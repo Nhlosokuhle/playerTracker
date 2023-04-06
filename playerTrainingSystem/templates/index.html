@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Try-eda SC</title>
+    <style>
+        #header{
+            background: linear-gradient(rgba(0, 0, 0,  0.5), rgba(0, 0, 0, 0.3)), url("{% static 'images/coder.jpg' %}") center/cover no-repeat fixed;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
+        .submit{
+        border: none;
+        outline: none;
+        height: 45px;
+        width: 20%;
+        background: #ececec;
+        border-radius: 5px;
+        transition: .4s;
+        }
+        .submit:hover{
+            background-color: rgba(37, 95, 156, 0.9);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <section id="header" class="vh-100-flex">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-content">
+                        <h1>Welcome Coach</h1>
+                        <h1>You can <span class="typewrite" data-loop="yes" data-speed="100" data-delay="2000" data-words='["add a player to the system", "edit the details of the player", "remove the player from the system", "view players that are eligible for selection"]'></span></h1>
+                        <h3>Al Try-eda Sporting Club</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of header -->
+
+    <!-- main content -->
+    <main>
+        <!-- user option -->
+        <section id="option" class="about py-7">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end user option -->
+    </main>
+    <!-- footer -->
+    <section id="header" class="vh-100-flex">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-content">
+                        <center>
+                            <h3>© 2023 Nhlosokuhle Bandile Khoza</h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of header -->
+    
+    <!-- typewriting js -->
+    <script src="{% static 'js/typewriting.js' %}">
+
+    </script>
+</body>
+</html>

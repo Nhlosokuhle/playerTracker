@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="title">
+        <h2>Players who are eligible for selection in the upcoming game</h2>
+    </div>
+    <div class="card card-body">
+        <a class="btn btn-primary btn-md btn-block" href="{% url 'playerTrainingSystem:manage_players' %}">Manage players</a>
+        <table class="table table-md">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            {% for player in players %}
+                {% if player.skill_level > 14 %}
+                <tr>
+                    <td>{{player.first_name}}</td>
+                    <td>{{player.last_name}}</td>          
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="title">
+    <h2>Remove Player</h2>
+</div>
+<p>Are you sure you want to remove {{player.first_name}} from the system?</p><br><br>
+<form method="POST">
+    {% csrf_token %}
+    <a href="{% url 'playerTrainingSystem:manage_players' %}">Cancel</a><br><br><br><br>
+    <input type="submit" class="submit" name="Confirm"><br><br>
+</form>
+{% endblock %}
