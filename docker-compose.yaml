@@ -6,7 +6,19 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     environment:
       - DEBUG=1
+      - DJANGO_SETTINGS_MODULE=mySite.settings
+      - SECRET_KEY=supersecretkey
+      - DEBUG=True
+      - DATABASE_URL=sqlite:////data/db.sqlite3
     ports:
       - "8000:8000"
     volumes:
       - .:/app
+  db:
+    image: busybox
+    volumes:
+      - db-data:/data
+    command: /bin/sh -c "while true; do sleep 10000; done"
+
+volumes:
+  db-data:
